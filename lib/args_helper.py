@@ -39,6 +39,12 @@ def parse_odc_args(default_action):
 
   parser_init = sub_parsers.add_parser('init', help='init connexion')
   parser_init.set_defaults(command="init")
+  parser_init.add_argument(
+      '--settingspath',
+      '-p',
+      type=str,
+      help='Settings file path',
+      default='./oauth_settings.yml')
 
   parser_upload = sub_parsers.add_parser(
       'put', help='upload a file')
