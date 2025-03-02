@@ -105,7 +105,7 @@ if __name__ == "__main__":
             print("initialization OK")
         else:
             print("error during initialization of token")
-        quit()
+        sys.exit()
 
     if os.path.exists(token_file_name):
         tr.init_token_from_file()
@@ -114,7 +114,7 @@ if __name__ == "__main__":
 
     if not tr.token_exists():
         print(f"please connect first with {sys.argv[0]} init")
-        quit()
+        sys.exit()
 
     # Manage command
     mgc = MsGraphClient(tr.get_session_from_token())
